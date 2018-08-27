@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Accordion, AccordionSet } from '@folio/stripes-components/lib/Accordion';
 import Button from '@folio/stripes-components/lib/Button';
+import IconButton from '@folio/stripes-components/lib/IconButton';
 import Datepicker from '@folio/stripes-components/lib/Datepicker';
 import KeyValue from '@folio/stripes-components/lib/KeyValue';
 import Pane from '@folio/stripes-components/lib/Pane';
@@ -369,13 +370,12 @@ class RequestForm extends React.Component {
 
     const addRequestFirstMenu =
       <PaneMenu>
-        <Button
+        <IconButton
+          icon="closeX"
           onClick={onCancel}
           title={intl.formatMessage({ id: 'ui-requests.actions.closeNewRequest' })}
           aria-label={intl.formatMessage({ id: 'ui-requests.actions.closeNewRequest' })}
-        >
-          <span style={{ fontSize: '30px', color: '#999', lineHeight: '18px' }} >&times;</span>
-        </Button>
+        />
       </PaneMenu>;
     const addRequestLastMenu =
       <PaneMenu>
@@ -385,6 +385,7 @@ class RequestForm extends React.Component {
           title={intl.formatMessage({ id: 'ui-requests.actions.createNewRequest' })}
           disabled={pristine || submitting}
           onClick={handleSubmit}
+          buttonStyle="primary paneHeaderNewButton marginBottom0"
         >
           <FormattedMessage id="ui-requests.actions.newRequest" />
         </Button>
@@ -397,6 +398,7 @@ class RequestForm extends React.Component {
           title={intl.formatMessage({ id: 'ui-requests.actions.updateRequest' })}
           disabled={pristine || submitting}
           onClick={handleSubmit}
+          buttonStyle="primary paneHeaderNewButton marginBottom0"
         >
           <FormattedMessage id="ui-requests.actions.updateRequest" />
         </Button>
