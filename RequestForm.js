@@ -451,7 +451,7 @@ class RequestForm extends React.Component {
               title: intl.formatMessage({ id: 'ui-requests.cancel.cancelRequest' }),
               label: intl.formatMessage({ id: 'ui-requests.cancel.cancelRequest' }),
               onClick: () => this.setState({ isCancellingRequest: true }),
-              icon: 'cancel',
+              icon: 'clearX',
             }] : undefined}
             paneTitle={isEditForm ? intl.formatMessage({ id: 'ui-requests.actions.editRequest' }) : intl.formatMessage({ id: 'ui-requests.actions.newRequest' })}
           >
